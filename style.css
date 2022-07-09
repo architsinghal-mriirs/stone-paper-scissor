@@ -33,6 +33,7 @@ button:hover {
   background-color: greenyellow;
   border: 2px solid black;
   padding: 5px;
+  display: none;
 }
 
 #playerOption {

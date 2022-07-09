@@ -8,6 +8,7 @@ const result = document.getElementById("result");
 
 const computerChoiceGenerate = (e) => {
   result.innerText = "";
+  inlineDisplayer();
   let pChoice = e.target.value;
   const choice = ["stone", "paper", "scissor"];
   let index = Math.floor(Math.random() * 3);
@@ -15,6 +16,12 @@ const computerChoiceGenerate = (e) => {
   playerChoice.innerText = pChoice;
   computerChoice.innerText = cChoice;
   resultCalculator(pChoice, cChoice);
+};
+
+const inlineDisplayer = () => {
+  playerChoice.style.display = "inline";
+  computerChoice.style.display = "inline";
+  result.style.display = "inline";
 };
 
 const resultCalculator = (pChoice, cChoice) => {
