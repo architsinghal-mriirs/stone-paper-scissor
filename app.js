@@ -23,9 +23,11 @@ const computerChoiceGenerate = (e) => {
   if (resulter == "winner") {
     imagePlayer.innerHTML =
       '<img src="hungry-lunch.gif" width = 40% height = 40%>';
-  }
-  if (resulter == "loser") {
+  } else if (resulter == "loser") {
     imagePlayer.innerHTML = '<img src="200.gif" width = 60% height = 60%>';
+  } else {
+    imagePlayer.innerHTML =
+      '<img src="kid-thinking.gif" width = 40% height = 25%>';
   }
 };
 
