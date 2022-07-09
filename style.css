@@ -39,3 +39,9 @@ button:hover {
 #playerOption {
   text-transform: uppercase;
 }
+
+.scoreContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

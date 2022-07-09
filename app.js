@@ -5,6 +5,10 @@ const scissor = document.getElementById("scissor");
 const playerChoice = document.getElementById("playerChoice");
 const computerChoice = document.getElementById("computerChoice");
 const result = document.getElementById("result");
+const pScore = document.getElementById("playerScore");
+const cScore = document.getElementById("computerScore");
+const imagePlayer = document.getElementById("imagePlayer");
+let score = 0;
 
 const computerChoiceGenerate = (e) => {
   result.innerText = "";
@@ -15,7 +19,14 @@ const computerChoiceGenerate = (e) => {
   let cChoice = choice[index];
   playerChoice.innerText = pChoice;
   computerChoice.innerText = cChoice;
-  resultCalculator(pChoice, cChoice);
+  let resulter = resultCalculator(pChoice, cChoice);
+  if (resulter == "winner") {
+    imagePlayer.innerHTML =
+      '<img src="hungry-lunch.gif" width = 40% height = 40%>';
+  }
+  if (resulter == "loser") {
+    imagePlayer.innerHTML = '<img src="200.gif" width = 60% height = 60%>';
+  }
 };
 
 const inlineDisplayer = () => {
@@ -27,27 +38,33 @@ const inlineDisplayer = () => {
 const resultCalculator = (pChoice, cChoice) => {
   if (pChoice === cChoice) {
     result.innerText = "Draw";
-    return;
+    return "draw";
   }
   if (pChoice === "stone") {
     if (cChoice === "paper") {
       result.innerText = "Computer Wins!";
+      return "loser";
     } else {
       result.innerText = "You Win !";
+      return "winner";
     }
   }
   if (pChoice === "paper") {
     if (cChoice === "scissor") {
       result.innerText = "Computer Wins!";
+      return "loser";
     } else {
       result.innerText = "You Win !";
+      return "winner";
     }
   }
   if (pChoice === "scissor") {
     if (cChoice === "stone") {
       result.innerText = "Computer Wins!";
+      return "loser";
     } else {
       result.innerText = "You Win !";
+      return "winner";
     }
   }
 };
